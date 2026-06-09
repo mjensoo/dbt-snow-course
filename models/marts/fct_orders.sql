@@ -41,7 +41,8 @@ lineitems_agg as (
 
 final as (
     select
-
+        --sk
+        {{ dbt_utils.generate_surrogate_key(['o.order_id']) }} as order_sk,
         -- Natural key
         o.order_id,
 
