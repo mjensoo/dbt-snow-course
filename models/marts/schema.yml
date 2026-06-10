@@ -1,0 +1,15 @@
+models:
+  # ── fct_orders ──────────────────────────────────────────────────────
+  - name: fct_orders
+    description: none
+    columns:
+      - name: order_sk
+        description: Unique order surrogate key
+        tests:
+          - not_null
+          - unique:
+              config:
+                store_failures: true
+      - name: order_id
+        description: none
+        tests: [not_null, unique]
